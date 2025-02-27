@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg1: rgb(212, 212, 216);
+  --color-bg2: rgb(250, 250, 250);
+  --color-color-1: 18, 113, 255;
+  --color-color-2: 221, 74, 255;
+  --color-color-3: 100, 220, 255;
+  --color-color-4: 200, 50, 50;
+  --color-color-5: 100, 180, 50;
+  /* --color-color-1: 24, 24, 27;
+  --color-color-2: 63, 63, 70;
+  --color-color-3: 82, 82, 91;
+  --color-color-4: 113, 113, 122;
+  --color-color-5: 161, 161, 170; */
+  --color-interactive: 140, 100, 255;
+  --circle-size: 80%;
+  --blending: hard-light;
+  --custom-linear: 40deg, white, white;
+  --custom-radial1:
+    circle at center, rgba(var(--color-color-1), 0.8) 0,
+    rgba(var(--color-color-1), 0) 50%;
+  --custom-radial2:
+    circle at center, rgba(var(--color-color-2), 0.8) 0,
+    rgba(var(--color-color-2), 0) 50%;
+  --custom-radial3:
+    circle at center, rgba(var(--color-color-3), 0.8) 0,
+    rgba(var(--color-color-3), 0) 50%;
+  --custom-radial4:
+    circle at center, rgba(var(--color-color-4), 0.8) 0,
+    rgba(var(--color-color-4), 0) 50%;
+  --custom-radial5:
+    circle at center, rgba(var(--color-color-5), 0.8) 0,
+    rgba(var(--color-color-5), 0) 50%;
+  --custom-radial-interactive:
+    circle at center, rgba(var(--color-interactive), 0.8) 0,
+    rgba(var(--color-color-5), 0) 50%;
+  --animate-moveInCircle1: moveInCircle 20s reverse infinite;
+  --animate-moveInCircle2: moveInCircle 40s linear infinite;
+  --animate-moveInCircle3: moveInCircle 20s ease infinite;
+  --animate-moveVertical: moveVertical 30s ease infinite;
+  --animate-moveHorizontal: moveHorizontal 40s ease infinite;
+  --font-primary: "Syne Variable", sans-serif;
+  --font-secondary: "Inter Variable", sans-serif;
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 0.05em #27272a;
+}
+
+.noiseFilter {
+  background-image: url(./assets/noise.png);
+  opacity: 0.6;
+  background-color: rgba(0, 0, 0, 0.1);
+}
