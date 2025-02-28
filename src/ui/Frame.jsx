@@ -3,9 +3,9 @@ import { motion } from "motion/react";
 export default function Frame() {
   return (
     <motion.div
-      initial={{ scale: 0.8 }}
+      initial={{ scale: 0.9 }}
       animate={{ scale: 1 }}
-      transition={{ duration: 0.8, type: "spring" }}
+      transition={{ duration: 0.2, type: "spring" }}
       className="fixed top-0 left-0 h-full w-full"
     >
       <div className="absolute top-1 left-1 h-10 w-10 border-t-2 border-l-2 border-zinc-800 md:top-5 md:left-5"></div>

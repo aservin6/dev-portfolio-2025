@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { useRef } from "react";
 
 import {
   SiReact,
@@ -17,28 +18,35 @@ import {
 import { VscVscode } from "react-icons/vsc";
 
 export default function Marquee() {
+  const ref = useRef(null);
   return (
-    <motion.div
+    <div
       id="marquee"
+      ref={ref}
       className="mx-auto mt-10 flex items-center overflow-hidden"
     >
-      <MarqueeItem icons={icons} from={0} to={"-100%"} />
-    </motion.div>
+      <MarqueeItem ref={ref} icons={icons} from={0} to={"-100%"} />
+    </div>
   );
 }
 
-function MarqueeItem({ icons, from, to }) {
+function MarqueeItem({ ref, icons, from, to }) {
   return (
     <div className="flex items-center border-y border-zinc-800 py-2">
       <motion.div
         initial={{ x: `${from}` }}
         animate={{ x: `${to}` }}
-        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        transition={{
+          duration: 60,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        viewport={{ root: ref }}
         className="flex flex-shrink-0"
       >
         {icons.map((item, index) => {
           return (
-            <div className="w-24 pr-20" key={index}>
+            <div className="w-12 pr-10 md:w-24 md:pr-20" key={index}>
               {item}
             </div>
           );
@@ -48,12 +56,17 @@ function MarqueeItem({ icons, from, to }) {
       <motion.div
         initial={{ x: `${from}` }}
         animate={{ x: `${to}` }}
-        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        transition={{
+          duration: 60,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        viewport={{ root: ref }}
         className="flex flex-shrink-0"
       >
         {icons.map((item, index) => {
           return (
-            <div className="w-24 pr-20" key={index}>
+            <div className="w-12 pr-10 md:w-24 md:pr-20" key={index}>
               {item}
             </div>
           );
@@ -64,17 +77,17 @@ function MarqueeItem({ icons, from, to }) {
 }
 
 const icons = [
-  <SiReact key="react" size={28} />,
-  <SiTypescript key="typescript" size={28} />,
-  <SiTailwindcss key="tailwind" size={28} />,
-  <SiNextdotjs key="nextjs" size={28} />,
-  <SiJavascript key="javascript" size={28} />,
-  <SiGit key="git" size={28} />,
-  <SiHtml5 key="html" size={28} />,
-  <SiNpm key="npm" size={28} />,
-  <SiVite key="vite" size={28} />,
-  <SiCss3 key="css" size={28} />,
-  <SiGithub key="github" size={28} />,
-  <VscVscode key="vscode" size={28} />,
-  <SiFramer key="framer" size={28} />,
+  <SiReact key="react" className="size-4 md:size-7" />,
+  <SiTypescript key="typescript" size={28} className="size-4 md:size-7" />,
+  <SiTailwindcss key="tailwind" size={28} className="size-4 md:size-7" />,
+  <SiNextdotjs key="nextjs" size={28} className="size-4 md:size-7" />,
+  <SiJavascript key="javascript" size={28} className="size-4 md:size-7" />,
+  <SiGit key="git" size={28} className="size-4 md:size-7" />,
+  <SiHtml5 key="html" size={28} className="size-4 md:size-7" />,
+  <SiNpm key="npm" size={28} className="size-4 md:size-7" />,
+  <SiVite key="vite" size={28} className="size-4 md:size-7" />,
+  <SiCss3 key="css" size={28} className="size-4 md:size-7" />,
+  <SiGithub key="github" size={28} className="size-4 md:size-7" />,
+  <VscVscode key="vscode" size={28} className="size-4 md:size-7" />,
+  <SiFramer key="framer" size={28} className="size-4 md:size-7" />,
 ];

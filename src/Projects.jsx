@@ -127,7 +127,7 @@ function ProjectPreview({ selectedTab }) {
         transition={{ duration: 0.3 }}
       >
         <div className="flex flex-col space-y-5">
-          <div className="border-2 border-zinc-800 shadow-[-12px_12px_0px_0px] shadow-zinc-800">
+          <div className="border-2 border-zinc-800 object-contain shadow-[-12px_12px_0px_0px] shadow-zinc-800">
             <img src={selectedTab.image}></img>
           </div>
           <ProjectTags selectedTab={selectedTab} />

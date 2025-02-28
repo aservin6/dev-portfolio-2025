@@ -33,7 +33,7 @@ function Heading({ children, sectionRef }) {
       initial="initial"
       whileInView="animate"
       viewport={{ root: sectionRef, amount: 0.5 }}
-      className="relative block overflow-hidden text-3xl font-extrabold whitespace-nowrap uppercase sm:text-5xl md:text-6xl xl:text-8xl"
+      className="relative block overflow-hidden text-3xl font-extrabold whitespace-nowrap uppercase will-change-transform sm:text-5xl md:text-6xl xl:text-8xl"
     >
       <div>
         {children.split("").map((l, i) => (

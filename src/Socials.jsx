@@ -4,19 +4,8 @@ import { socialLinkOptions } from "./data/portfolio";
 export default function Socials() {
   return (
     <div className="fixed right-4 bottom-4 w-1/2 border-t-2 border-zinc-800 text-xl md:right-10 md:bottom-10 md:w-1/3">
-      <motion.div
-        initial="initial"
-        animate="animate"
-        className="relative block overflow-hidden whitespace-nowrap"
-      >
-        <motion.div
-          variants={{
-            initial: { y: "100%" },
-            animate: { y: 0 },
-          }}
-          transition={{ duration: 1, type: "spring" }}
-          className="inline-block w-full"
-        >
+      <div className="relative block overflow-hidden whitespace-nowrap">
+        <div className="inline-block w-full">
           <div className="flex items-center">
             <span className="mr-auto cursor-default text-xs font-extrabold uppercase md:text-base">
               AS
@@ -28,8 +17,8 @@ export default function Socials() {
               })}
             </div>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </div>
   );
 }
