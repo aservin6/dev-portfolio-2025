@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { motion } from "motion/react";
 
 export default function Background() {
   return (
@@ -54,8 +53,7 @@ function CircleGradients() {
       <div className="animate-moveInCircle1 absolute top-[calc(50%-var(--circle-size)/2)] left-[calc(50%-var(--circle-size)/2)] h-4/5 w-4/5 origin-[calc(50%-400px)] bg-radial-(--custom-radial2) opacity-100 mix-blend-hard-light"></div>
       <div className="animate-moveInCircle2 absolute top-[calc(50%-var(--circle-size)/2+200px)] left-[calc(50%-var(--circle-size)/2-500px)] h-4/5 w-4/5 origin-[calc(50%+400px)] bg-radial-(--custom-radial3) opacity-100 mix-blend-hard-light"></div>
       <div className="animate-moveHorizontal absolute top-[calc(50%-var(--circle-size)/2)] left-[calc(50%-var(--circle-size)/2)] h-4/5 w-4/5 origin-[calc(50%-200px)] bg-radial-(--custom-radial4) opacity-70 mix-blend-hard-light"></div>
-
-      <motion.div className="animate-moveInCircle3 absolute top-[calc(50%-var(--circle-size))] left-[calc(50%-var(--circle-size))] h-[calc(var(--circle-size)*2)] w-[calc(var(--circle-size)*2)] origin-[calc(50%-800px)_calc(50%+200px)] bg-radial-(--custom-radial5) opacity-100 mix-blend-hard-light"></motion.div>
+      <div className="animate-moveInCircle3 absolute top-[calc(50%-var(--circle-size))] left-[calc(50%-var(--circle-size))] h-[calc(var(--circle-size)*2)] w-[calc(var(--circle-size)*2)] origin-[calc(50%-800px)_calc(50%+200px)] bg-radial-(--custom-radial5) opacity-100 mix-blend-hard-light"></div>
     </>
   );
 }

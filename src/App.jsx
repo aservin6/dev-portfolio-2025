@@ -7,11 +7,11 @@ import Navigation from "./Navigation";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Socials from "./Socials";
-import { useState, lazy, Suspense } from "react";
+import { useState } from "react";
 import Frame from "./ui/Frame";
 import Overlay from "./ui/Overlay";
 import Marquee from "./ui/Marquee";
-import Loading from "./ui/Loading";
+import Intro from "./Intro";
 
 function App() {
   let currentPath = location.hash;
@@ -24,8 +24,6 @@ function App() {
     setSelectedLink(url);
   };
 
-  const HeavyAnimationComponent = lazy(() => import("./Intro"));
-
   return (
     <>
       <div className="font-primary relative z-10 h-full w-full text-zinc-800">
@@ -33,16 +31,13 @@ function App() {
           selectedLink={selectedLink}
           onLinkClick={handleLinkChange}
         />
-        <Suspense fallback={<Loading />}>
-          <main className="h-screen w-full">
-            {/* Intro page */}
-            <HeavyAnimationComponent onLinkChange={handleLinkChange} />
-            <Marquee />
-            <Projects onLinkChange={handleLinkChange} />
-            <Marquee />
-            <Contact onLinkChange={handleLinkChange} />
-          </main>
-        </Suspense>
+        <main className="h-screen w-full">
+          <Intro onLinkChange={handleLinkChange} />
+          <Marquee />
+          <Projects onLinkChange={handleLinkChange} />
+          <Marquee />
+          <Contact onLinkChange={handleLinkChange} />
+        </main>
         <Socials />
       </div>
       <Background />
