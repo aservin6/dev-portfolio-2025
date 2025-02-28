@@ -42,7 +42,7 @@ function Interactive() {
   return (
     <div
       id="interactive"
-      className={`absolute -top-1/2 -left-1/2 hidden h-full w-full bg-radial-(--custom-radial1) opacity-70 mix-blend-hard-light lg:block`}
+      className={`absolute -top-1/2 -left-1/2 h-full w-full bg-radial-(--custom-radial1) opacity-70 mix-blend-hard-light`}
     ></div>
   );
 }
