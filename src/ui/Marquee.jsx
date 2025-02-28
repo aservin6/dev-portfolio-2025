@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { useRef } from "react";
 
 import {
   SiReact,
@@ -18,19 +17,17 @@ import {
 import { VscVscode } from "react-icons/vsc";
 
 export default function Marquee() {
-  const ref = useRef(null);
   return (
     <div
       id="marquee"
-      ref={ref}
       className="mx-auto mt-10 flex items-center overflow-hidden"
     >
-      <MarqueeItem ref={ref} icons={icons} from={0} to={"-100%"} />
+      <MarqueeItem icons={icons} from={0} to={"-100%"} />
     </div>
   );
 }
 
-function MarqueeItem({ ref, icons, from, to }) {
+function MarqueeItem({ icons, from, to }) {
   return (
     <div className="flex items-center border-y border-zinc-800 py-2">
       <motion.div
@@ -41,8 +38,7 @@ function MarqueeItem({ ref, icons, from, to }) {
           repeat: Infinity,
           ease: "linear",
         }}
-        viewport={{ root: ref }}
-        className="flex flex-shrink-0"
+        className="flex flex-shrink-0 will-change-transform"
       >
         {icons.map((item, index) => {
           return (
@@ -61,8 +57,7 @@ function MarqueeItem({ ref, icons, from, to }) {
           repeat: Infinity,
           ease: "linear",
         }}
-        viewport={{ root: ref }}
-        className="flex flex-shrink-0"
+        className="flex flex-shrink-0 will-change-transform"
       >
         {icons.map((item, index) => {
           return (

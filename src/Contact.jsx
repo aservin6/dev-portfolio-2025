@@ -19,7 +19,7 @@ export default function Contact({ onLinkChange }) {
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ root: sectionRef, amount: 0.5 }}
-        transition={{ duration: 2, type: "spring" }}
+        transition={{ duration: 0.5 }}
         className="relative mx-auto w-11/12 md:w-4/5 md:p-5"
       >
         <div className="mx-auto flex max-w-2xl flex-col border-2 bg-zinc-50 p-3 shadow-[-12px_12px_0px_0px] shadow-zinc-800">

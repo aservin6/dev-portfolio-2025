@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { motion } from "motion/react";
 
 export default function Background() {
   return (
@@ -49,11 +50,42 @@ function Interactive() {
 function CircleGradients() {
   return (
     <>
-      <div className="animate-moveVertical absolute top-[calc(50%-var(--circle-size)/2)] left-[calc(50%-var(--circle-size)/2)] h-4/5 w-4/5 origin-center bg-radial-(--custom-radial1) opacity-100 mix-blend-hard-light"></div>
-      <div className="animate-moveInCircle1 absolute top-[calc(50%-var(--circle-size)/2)] left-[calc(50%-var(--circle-size)/2)] h-4/5 w-4/5 origin-[calc(50%-400px)] bg-radial-(--custom-radial2) opacity-100 mix-blend-hard-light"></div>
-      <div className="animate-moveInCircle2 absolute top-[calc(50%-var(--circle-size)/2+200px)] left-[calc(50%-var(--circle-size)/2-500px)] h-4/5 w-4/5 origin-[calc(50%+400px)] bg-radial-(--custom-radial3) opacity-100 mix-blend-hard-light"></div>
-      <div className="animate-moveHorizontal absolute top-[calc(50%-var(--circle-size)/2)] left-[calc(50%-var(--circle-size)/2)] h-4/5 w-4/5 origin-[calc(50%-200px)] bg-radial-(--custom-radial4) opacity-70 mix-blend-hard-light"></div>
-      <div className="animate-moveInCircle3 absolute top-[calc(50%-var(--circle-size))] left-[calc(50%-var(--circle-size))] h-[calc(var(--circle-size)*2)] w-[calc(var(--circle-size)*2)] origin-[calc(50%-800px)_calc(50%+200px)] bg-radial-(--custom-radial5) opacity-100 mix-blend-hard-light"></div>
+      <motion.div
+        animate={{ y: ["-50%", "50%", "-50%"] }}
+        transition={{ duration: 30, repeat: Infinity }}
+        className="absolute top-[calc(50%-var(--circle-size)/2)] left-[calc(50%-var(--circle-size)/2)] h-4/5 w-4/5 origin-center bg-radial-(--custom-radial1) opacity-100 mix-blend-hard-light will-change-transform"
+      ></motion.div>
+      <motion.div
+        animate={{ rotate: -360 }}
+        transition={{ duration: 20, repeat: Infinity }}
+        className="absolute top-[calc(50%-var(--circle-size)/2)] left-[calc(50%-var(--circle-size)/2)] h-4/5 w-4/5 origin-[calc(50%-400px)] bg-radial-(--custom-radial2) opacity-100 mix-blend-hard-light will-change-transform"
+      ></motion.div>
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{
+          duration: 40,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute top-[calc(50%-var(--circle-size)/2+200px)] left-[calc(50%-var(--circle-size)/2-500px)] h-4/5 w-4/5 origin-[calc(50%+400px)] bg-radial-(--custom-radial3) opacity-100 mix-blend-hard-light will-change-transform"
+      ></motion.div>
+      <motion.div
+        animate={{ x: ["-10%", "10%", "-10%"] }}
+        transition={{
+          duration: 40,
+          repeat: Infinity,
+        }}
+        className="absolute top-[calc(50%-var(--circle-size)/2)] left-[calc(50%-var(--circle-size)/2)] h-4/5 w-4/5 origin-[calc(50%-200px)] bg-radial-(--custom-radial4) opacity-70 mix-blend-hard-light will-change-transform"
+      ></motion.div>
+
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+        }}
+        className="absolute top-[calc(50%-var(--circle-size))] left-[calc(50%-var(--circle-size))] h-[calc(var(--circle-size)*2)] w-[calc(var(--circle-size)*2)] origin-[calc(50%-800px)_calc(50%+200px)] bg-radial-(--custom-radial5) opacity-100 mix-blend-hard-light will-change-transform"
+      ></motion.div>
     </>
   );
 }

@@ -18,7 +18,7 @@ export default function Intro({ onLinkChange }) {
     <section ref={sectionRef} id="intro" className="relative h-screen w-full">
       <div className="relative top-1/4 mx-auto flex max-w-fit flex-col space-y-12 md:p-5">
         <div className="flex flex-col justify-center select-none">
-          <Heading sectionRef={sectionRef}>Alex&nbsp;Servin</Heading>
+          <Heading>Alex&nbsp;Servin</Heading>
           <Subheading>Front-End&nbsp;Developer</Subheading>
         </div>
       </div>
@@ -27,12 +27,11 @@ export default function Intro({ onLinkChange }) {
   );
 }
 
-function Heading({ children, sectionRef }) {
+function Heading({ children }) {
   return (
     <motion.h1
       initial="initial"
-      whileInView="animate"
-      viewport={{ root: sectionRef, amount: 0.5 }}
+      animate="animate"
       className="relative block overflow-hidden text-3xl font-extrabold whitespace-nowrap uppercase will-change-transform sm:text-5xl md:text-6xl xl:text-8xl"
     >
       <div>

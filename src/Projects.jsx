@@ -23,7 +23,7 @@ export default function Projects({ onLinkChange }) {
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ root: sectionRef, amount: 0.5 }}
-        transition={{ duration: 2, type: "spring" }}
+        transition={{ duration: 0.5 }}
         className="relative mx-auto w-11/12 md:p-5"
       >
         <div className="flex flex-col justify-between gap-x-5 lg:flex-row">
